@@ -1,0 +1,25 @@
+html { font-family: Arial, Helvetica, sans-serif; }
+form { padding-bottom: 2em; } /* guys i swear i can CSS still... */
+
+.container {
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+    width: 50%;
+    background: rgb(218,218,218);
+    background: linear-gradient(180deg, rgba(218,218,218,0.9108018207282913) 0%, rgba(255,255,255,0.5970763305322129) 100%);
+}
+
+.sidebar {
+    width: 20%;
+    display: block;
+    float: left;
+}
+
+.main {
+    width: 40%;
+    display: inline-block;
+}
+
+.post {
+    padding: 4px;
+}

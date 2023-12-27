@@ -1,0 +1,20 @@
+doctype html 
+html
+    head
+        title=buddyboard
+        link(rel="stylesheet", href="static/stylings.css", type="text/css")
+    body
+        .container
+            h1 b14
+            .sidebar
+                p Rules:
+                ul
+                    li Be nice.
+            .main
+                form(action="/" method="POST")
+                    textarea(name="content", cols="50", rows="4")
+                    input(type="submit")
+                each post in posts
+                    .post
+                        b=post.author
+                        p=post.content
