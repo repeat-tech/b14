@@ -6,7 +6,8 @@ const path = require('path');
 const fs = require('fs');
 const app = express();
 const YAML = require('yaml');
-const bodyParser = require('body-parser'); 
+const bodyParser = require('body-parser');
+const uuid = require('uuid');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
@@ -27,7 +28,7 @@ function loadPosts() {
 // routes
 app.get('/', (request, response) => {
     const posts = loadPosts()
-    response.render('index', {"posts" : posts});
+    response.render('index', {"posts" : posts, "id" : uuid.v1()});
   });
 
 app.post('/', (request, response) => {
@@ -35,7 +36,7 @@ app.post('/', (request, response) => {
     const content = request.body.content;
     const newPost = {
         id: postCount++,
-        author: 'Anonymous',
+        author: uuid.v1(),
         ip: request.socket.remoteAddress,
         content,
     };
